@@ -11,7 +11,7 @@ function Button(props) {
   );
 }
 
-function Dashboard(props) {
+function Chat(props) {
   function handleClick() {
     console.log('handleClick')
   }
@@ -23,4 +23,4 @@ function Dashboard(props) {
   );
 }
 
-export default Dashboard
+export default Chat

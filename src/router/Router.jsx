@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../login/Login";
-import Dashboard from "../dashboard/Dashboard";
+import Chat from "../chat/Chat";
 
 function Router() {
   return (
@@ -9,7 +9,7 @@ function Router() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/chat" element={<Chat />} />
       </Routes>
     </BrowserRouter>
   )

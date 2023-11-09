@@ -70,6 +70,7 @@ function Chat() {
 
     return (
         <div className="chat-box">
+
             <div className="chat-header">
                 <h2>Atendimento Online</h2>
             </div>
@@ -90,10 +91,12 @@ function Chat() {
                         onKeyDown={(event) => handleKeyDown(event)}
                         type="text"
                         placeholder="Digite sua mensagem..."
+                        className="input-message"
                     />
                     <button id="buttonEnviar" type="submit">Enviar</button>
                 </form>
             </div>
+
         </div>
     );
 }

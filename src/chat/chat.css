@@ -60,6 +60,16 @@ body {
     text-align: right;
 }
 
+
+.input-box input {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    margin-right: 10px;
+
+}
+
+
 .input-box {
     display: flex;
     background-color: #f5f5f5;
@@ -67,11 +77,14 @@ body {
     border-top: 1px solid #ddd;
 }
 
-.input-box input {
+
+.input-message {
+    flex: 1;
     padding: 10px;
     border: none;
     border-radius: 3px;
     margin-right: 10px;
+    display: inline-block;
 }
 
 .input-box button {
@@ -80,15 +93,16 @@ body {
     border: none;
     border-radius: 3px;
     padding: 10px 20px;
-    margin-left: 10px;
     cursor: pointer;
     display: inline-block;
 }
+
 
 .msg-aluno {
     text-align: end;
     color: #228a22;
 }
+
 
 .msg-atendente {
     text-align: left;

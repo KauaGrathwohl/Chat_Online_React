@@ -34,7 +34,7 @@ function Login() {
         onChange={(e) => setUsername(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <Button onClick={handleLogin} />
+      <Button type="submit" onClick={handleLogin} />
     </div>
   );
 }

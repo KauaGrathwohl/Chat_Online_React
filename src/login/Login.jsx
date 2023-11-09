@@ -1,12 +1,12 @@
 import Input from "../components/input/Input";
 import Button from "../components/button/Button";
-import { useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import './login.css';
 
-function LoginPage() {
+function Login() {
   const [username, setUsername] = useState('');
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleLogin = () => {
 
@@ -31,4 +31,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default Login;

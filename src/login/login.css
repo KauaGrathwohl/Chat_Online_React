@@ -14,8 +14,9 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    border-radius: 5px;
-    width: 400px;
+    border-radius: 10px;
+    width: 450px;
+    height: 200px;
     margin: 0 auto;
     margin-top: center;
     box-sizing: 30px;
@@ -29,5 +30,5 @@ body {
 
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #00b330;
 }

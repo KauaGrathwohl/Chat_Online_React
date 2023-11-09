@@ -3,12 +3,8 @@ import './button.css';
 
 function Button(props) {
 
-
-
   return (
-    <button className="button">
-      {props.children}
-    </button>
+    <button onClick={props.onClick}>Entrar</button>
   );
 }
 

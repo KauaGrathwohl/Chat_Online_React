@@ -1,12 +1,15 @@
 import React from 'react';
 import './input.css';
 
-function Input() {
+function Input(props) {
 
   return (
-    <div>
-      <input className= "input" type="text"/>
-    </div >
+    <input
+      type="text"
+      placeholder="Nome de usuário"
+      value={props.value}
+      onChange={props.onChange}
+    />
   );
 }
 

@@ -3,16 +3,10 @@ import './input.css';
 
 function Input(props) {
 
-  const { value, onChange, onKeyDown } = props;
-
   return (
-    <input
-      type="text"
-      value={value}
-      onChange={onChange}
-      onKeyDown={onKeyDown}
-      placeholder="Nome de usuário"
-    />
+    <input {...props}
+      type={props.type || 'text'}
+      className='input' />
   );
 }
 

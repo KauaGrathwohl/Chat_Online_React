@@ -1,4 +1,4 @@
-Button {
+.button {
   background-color: #228a22;
   color: #ffffff;
   border: none;
@@ -9,6 +9,6 @@ Button {
   box-sizing: border-box;
 }
 
-button:hover {
+.button:hover {
   background-color: #218e49;
 }

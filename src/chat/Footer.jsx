@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { notification } from 'antd';
 import Input from '../components/input/Input';
 import Button from '../components/button/Button';
 
@@ -9,8 +10,11 @@ function Footer({ onSubmit }) {
     e.preventDefault();
 
     if (typeof mensagem !== 'string' || mensagem.trim() === '') {
-      //adicionar alerta
-      console.log('Mensagem inválida');
+      notification.error({
+        message: 'Erro!',
+        description: 'Digite uma mensagem válida!',
+      });
+
       return;
     }
 

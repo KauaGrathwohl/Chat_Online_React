@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { notification } from 'antd';
 import Input from '../components/input/Input';
 import Button from '../components/button/Button';
 import './login.css';
@@ -11,10 +12,16 @@ function Login() {
 
   const handleLogin = () => {
     if (username?.trim() !== '' && password?.trim() !== '') {
-      alert(`Bem-vindo ${username}!`);
       navigate('/chat');
+      notification.success({
+        message: 'Sucesso!',
+        description: `Bem vindo, ${username}`,
+      });
     } else {
-      alert('Por favor, insira um nome e senha válidos.');
+      notification.error({
+        message: 'Erro!',
+        description: 'Login e/ou senha inválidos',
+      });
     }
   };
 

@@ -1,53 +1,39 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./chat.css";
+import Input from "../components/input/Input";
+import Button from "../components/button/Button";
+
+const mensagensIniciais = [
+    {
+        texto: 'Olá! Como posso ajudar?',
+        atendente: true,
+    },
+    {
+        texto: 'Olá! Gostaria de tirar uma dúvida referente ao curso de Engenharia de Software!',
+        atendente: false,
+    },
+    {
+        texto: 'Certo! Qual seria a dúvida?',
+        atendente: true,
+    },
+]
 
 function Chat() {
-    const [mensagens, setMensagens] = useState([
-        (
-            <div key={0}>
-                <div className="msg-atendente">
-                    <strong>Atendente:</strong>
-                </div>
-                <div className="msg mensagem-atendente">Olá! Como posso ajudar?</div>
-            </div>
-        ),
-        (
-            <div key={1}>
-                <div className="msg-aluno">
-                    <strong>Você:</strong>
-                </div>
-                <div className="msg mensagem-aluno">Olá! Gostaria de tirar uma dúvida referente ao curso de Engenharia de Software!</div>
-            </div>
-        ),
-        (
-            <div key={2}>
-                <div className="msg-atendente">
-                    <strong>Atendente:</strong>
-                </div>
-                <div className="msg mensagem-atendente">Certo! Qual seria a dúvida?</div>
-            </div>
-        ),
-    ]);
-
+    const [mensagens, setMensagens] = useState(mensagensIniciais);
     const [mensagem, setMensagem] = useState("");
     const chatMensagemRef = useRef(null);
 
-    const adicionarMensagem = (nome, texto, classe) => {
-        const novaMensagem = (
-            <div key={mensagens.length}>
-                <div className={`msg-${classe}`}>
-                    <strong>{nome} diz:</strong>
-                </div>
-                <div className={`msg mensagem-${classe}`}>{texto}</div>
-            </div>
-        );
+    const adicionarMensagem = (texto) => {
+        const nMensagens = [...mensagens];
 
-        setMensagens((mensagensAntigas) => [...mensagensAntigas, novaMensagem]);
+        nMensagens.push({ texto, atendente: false });
+
+        setMensagens([...nMensagens]);
     };
 
     const enviarMensagem = () => {
-        if (mensagem.trim() !== "") {
-            adicionarMensagem("Você", mensagem, "aluno");
+        if (mensagem && mensagem.trim() !== "") {
+            adicionarMensagem(mensagem);
             setMensagem("");
         } else {
             alert("Digite uma mensagem!");
@@ -76,24 +62,38 @@ function Chat() {
             </div>
 
             <div className="chat-mensagem" ref={chatMensagemRef}>
-                {mensagens}
-            </div>
+                {mensagens.map((msg, i) => {
+                    const { atendente, usuario, texto } = msg;
+                    const className = `mensagem-${atendente ? 'atendente' : 'aluno'}`;
 
+                    return (
+                        <div key={i}>
+                            <div className={className}>
+                                <strong>{atendente || usuario}</strong>
+                            </div>
+                            <div className={`msg ${className}`}>
+                                {texto}
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
             <div className="input-box">
-                <form onSubmit={(e) => {
-                    e.preventDefault();
-                    enviarMensagem();
-                }}>
-                    <input
-                        id="inputMensagem"
-                        value={mensagem}
+                <form style={{ width: '100%' }}
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        enviarMensagem();
+                    }}>
+                    <Input value={mensagem}
+                        style={{ width: '75%' }}
+                        placeholder="Digite sua mensagem..."
                         onChange={(e) => setMensagem(e.target.value)}
                         onKeyDown={(event) => handleKeyDown(event)}
-                        type="text"
-                        placeholder="Digite sua mensagem..."
-                        className="input-message"
                     />
-                    <button id="buttonEnviar" type="submit">Enviar</button>
+                    <Button type='submit'
+                        style={{ width: '23%' }}>
+                        Enviar
+                    </Button>
                 </form>
             </div>
 

@@ -7,11 +7,10 @@ import './login.css';
 
 function Login() {
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    if (username?.trim() !== '' && password?.trim() !== '') {
+    if (username?.trim() !== '') {
       navigate('/chat');
       notification.success({
         message: 'Sucesso!',
@@ -20,7 +19,7 @@ function Login() {
     } else {
       notification.error({
         message: 'Erro!',
-        description: 'Login e/ou senha inválidos',
+        description: 'Nome de usuário inválido',
       });
     }
   };
@@ -43,15 +42,6 @@ function Login() {
           placeholder='Nome de usuário'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          onKeyDown={handleKeyDown}
-        />
-      </div>
-      <div className='login-password'>
-        <Input
-          placeholder='Senha'
-          type='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
           onKeyDown={handleKeyDown}
         />
       </div>

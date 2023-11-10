@@ -28,12 +28,6 @@ body {
     color: #333;
 }
 
-.login-username {
-    font-size: 20px;
-    padding: 5px 0px;
-    letter-spacing: 2px;
-}
-
 .login-password {
     font-size: 20px;
     padding: 5px 0px;

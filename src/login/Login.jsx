@@ -6,15 +6,15 @@ import './login.css';
 
 function Login() {
   const [username, setUsername] = useState('');
-  const Navigate = useNavigate();
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = () => {
-    if (username.trim() !== '') {
+    if (username?.trim() !== '' && password?.trim() !== '') {
       alert(`Bem-vindo ${username}!`);
-      Navigate('/chat');
-
+      navigate('/chat');
     } else {
-      alert('Por favor, insira um nome de usuário válido.');
+      alert('Por favor, insira um nome e senha válidos.');
     }
   };
 
@@ -28,13 +28,32 @@ function Login() {
 
   return (
     <div className="container">
-      <h1>Login</h1>
-      <Input
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        onKeyDown={handleKeyDown}
-      />
-      <Button type="submit" onClick={handleLogin} />
+      <div className='login-title'>
+        Login
+      </div>
+      <div className='login-username'>
+        <Input
+          placeholder='Nome de usuário'
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          onKeyDown={handleKeyDown}
+        />
+      </div>
+      <div className='login-password'>
+        <Input
+          placeholder='Senha'
+          type='password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={handleKeyDown}
+        />
+      </div>
+      <div className='login-button'>
+        <Button type="submit"
+          onClick={handleLogin}>
+          Entrar
+        </Button>
+      </div>
     </div>
   );
 }

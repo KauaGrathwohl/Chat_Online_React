@@ -8,7 +8,6 @@ body {
     margin: 0;
 }
 
-
 .container {
     text-align: center;
     background-color: #fff;
@@ -16,19 +15,31 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 450px;
-    height: 200px;
     margin: 0 auto;
     margin-top: center;
     box-sizing: 30px;
-
 }
 
 
-.container h1 {
+.login-title {
+    margin: 10px 0px 50px 0px;
+    font-size: 35px;
+    letter-spacing: 2px;
     color: #333;
 }
 
+.login-username {
+    font-size: 20px;
+    padding: 5px 0px;
+    letter-spacing: 2px;
+}
 
-button:hover {
-    background-color: #00b330;
+.login-password {
+    font-size: 20px;
+    padding: 5px 0px;
+}
+
+.login-button {
+    font-size: 20px;
+    padding: 30px 0px 5px 0px;
 }

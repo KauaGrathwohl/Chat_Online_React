@@ -26,7 +26,6 @@ body {
 
 .chat-mensagem {
     padding: 15px;
-    max-height: 600px;
     overflow-y: scroll;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;

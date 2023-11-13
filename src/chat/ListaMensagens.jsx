@@ -11,7 +11,7 @@ function ListaMensagens({ mensagens }) {
   }, [mensagens]);
 
   return (
-    <div className='chat-mensagem'
+    <div className='chat-body'
       ref={mensagensRef}>
       <div style={{ maxHeight: '55vh' }}>
         {mensagens?.map((msg, i) => (

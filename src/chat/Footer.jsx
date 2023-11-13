@@ -29,7 +29,7 @@ function Footer({ onSubmit }) {
   }
 
   return (
-    <div className='input-box'>
+    <div className='chat-footer'>
       <form style={{ width: '100%' }}
         onSubmit={handleSubmit}>
         <Input value={mensagem}

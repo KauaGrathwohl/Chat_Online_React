@@ -5,10 +5,10 @@ function Mensagem({ atendente, texto }) {
 
   return (
     <div>
-      <div className={`msg-${tipo}`}>
+      <div className={`chat-msg-${tipo}`}>
         <strong>{atendente ? 'Atendente' : 'Você'}</strong>
       </div>
-      <div className={`msg mensagem-${tipo}`}>
+      <div className={`chat-msg chat-msg-text-${tipo}`}>
         {texto}
       </div>
     </div>

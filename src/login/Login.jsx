@@ -33,7 +33,7 @@ function Login() {
   };
 
   return (
-    <div className="container">
+    <div className='login-card'>
       <div className='login-title'>
         Login
       </div>

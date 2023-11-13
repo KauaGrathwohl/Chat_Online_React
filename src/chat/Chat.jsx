@@ -31,7 +31,7 @@ function Chat() {
 	}
 
 	return (
-		<div className='chat-box'>
+		<div className='chat'>
 			<Header title='Atendimento Online' />
 			<ListaMensagens mensagens={mensagens} />
 			<Footer onSubmit={handleSubmit} />
